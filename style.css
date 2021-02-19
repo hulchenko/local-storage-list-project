@@ -8,6 +8,7 @@ html {
     align-items: center;
     text-align: center;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    user-select: none;
   }
   
   *,
@@ -20,7 +21,16 @@ html {
     background: rgba(255, 255, 255, 0.2);
     padding: 10px;
     border-radius: 99%;
-    margin-bottom: 50px;
+    
+  }
+
+  svg:hover {
+    background-color: white;
+  }
+
+  svg:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
   }
   
   .wrapper {
@@ -34,6 +44,7 @@ html {
     text-align: center;
     margin: 0;
     font-weight: 200;
+    text-shadow: 1px 1px 2px grey;
   }
   
   .lines {
@@ -55,19 +66,6 @@ html {
     cursor: pointer;
   }
   
-  .lines input {
-    display: none;
-  }
-  
-  .lines input + label:before {
-    content: "⬜️";
-    margin-right: 10px;
-  }
-  
- /* .lines input:checked + label:before {
-    content: "🌮";
-  }*/
-  
   .add-items {
     margin-top: 20px;
   }
@@ -76,4 +74,18 @@ html {
     padding: 10px;
     outline: 0;
     border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 50px;
+      background: rgba(0, 0, 0, 0.1)
+  }
+
+  .button:hover {
+      background: rgba(0, 0, 0, 0.1);
+  }
+
+  .button:active {
+      background: rgba(0, 0, 0, 0.2);
   }
