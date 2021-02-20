@@ -1,41 +1,7 @@
-/*const addItems = document.querySelector('.add-items');
-const itemsList = document.querySelector('.lines');
-const items = JSON.parse(localStorage.getItem('items')) || [];// #1 storing data in here
-                                                              // #2 JSON parse reverses string conversion, back to objects
-
-function addItem(e) {
-    e.preventDefault();
-    const text = (this.querySelector("[name=item]")).value;
-    const item = {
-        text: text,
-        done: false
-    }
-    items.push(item);
-    populateList(items, itemsList);
-    localStorage.setItem('items', JSON.stringify(items));//convert to strings, local Storage only saves strings
-    this.reset();
-}
-
-
-
-function populateList(lines = [], linesList) {
-    linesList.innerHTML = lines.map((line, i) => {
-        return `
-        <li>
-            <input type="checkbox" data-index=${i} id="item${i}" ${line.done ? "checked" : ""}/>
-            <label for="item${i}">${line.text}</label>
-        </li>
-        `;
-    }).join("");
-}
-
-addItems.addEventListener("submit", addItem);
-populateList(items, itemsList); //pulls stored info from the const items in the beginning of the page, by the end of the page processing.
-*/
-
 const addItems = document.querySelector('.add-items');
 const itemsList = document.querySelector('.lines');
-let items = JSON.parse(localStorage.getItem('items')) || [];
+let items = JSON.parse(localStorage.getItem('items')) || [];// #1 storing data in here
+                                                            // #2 JSON parse reverses string conversion, back to objects
 
 function addItem(e) {
   e.preventDefault();
@@ -47,7 +13,7 @@ function addItem(e) {
 
   items.push(item);
   populateList(items, itemsList);
-  localStorage.setItem('items', JSON.stringify(items));
+  localStorage.setItem('items', JSON.stringify(items));//convert to strings, local Storage only saves strings
   this.reset();
 }
 
@@ -68,7 +34,7 @@ function toggleDone(e) {
   const index = el.dataset.index;
   items[index].done = !items[index].done;
   localStorage.setItem('items', JSON.stringify(items));
-  populateList(items, itemsList);
+  populateList(items, itemsList);//pulls stored info from the const items in the beginning of the page, by the end of the page processing.
 }
 
 
